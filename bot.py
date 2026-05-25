@@ -1,4 +1,5 @@
 import sqlite3
+import os
 from datetime import datetime, timedelta
 
 from telegram import ReplyKeyboardMarkup, Update
@@ -11,7 +12,8 @@ from telegram.ext import (
     filters,
 )
 
-TOKEN = "8913643857:AAEnSvJp3TaAdslk3Tz_o8aAcW88rDwHTwM"
+TOKEN = os.getenv("TOKEN")
+
 
 conn = sqlite3.connect(
     "students.db",
